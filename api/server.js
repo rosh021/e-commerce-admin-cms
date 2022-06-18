@@ -1,0 +1,28 @@
+import "dotenv/config";
+import express from "express";
+import helmet from "helmet";
+import morgan from "morgan";
+const PORT = process.env.PORT || 8000;
+const app = express();
+app.use(helmet());
+app.use(morgan());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({ message: "Hello From the server" });
+});
+
+app.use((error, req, res) => {
+  console.log(error);
+  res.send = error.status || 400;
+  req.json({
+    status: "error",
+    message: error.message,
+  });
+});
+
+app.listen(PORT, (error) => {
+  error && console.log(error);
+
+  console.log(`Server is running http://localhost:${PORT}`);
+});
