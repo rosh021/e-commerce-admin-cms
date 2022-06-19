@@ -12,6 +12,8 @@ route.post("/", adminRegisterValidation, (req, res) => {
   console.log(req.body);
 
   // 1. encrypt password
+
+  
   //2. call model to run save query
   //3. unique url endpoint and sent that to customer
 
