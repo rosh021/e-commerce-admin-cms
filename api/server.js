@@ -9,6 +9,8 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 // Database Connection
+import { createConnection } from "./src/config/dbConfig.js";
+createConnection();
 
 //APIS
 
