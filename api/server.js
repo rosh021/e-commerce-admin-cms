@@ -23,7 +23,6 @@ app.get("/", (req, res) => {
 });
 
 app.use((error, req, res) => {
-  console.log(error);
   res.send = error.status || 400;
   req.json({
     status: "error",
