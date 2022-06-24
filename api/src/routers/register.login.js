@@ -20,8 +20,12 @@ route.post("/", adminRegisterValidation, async (req, res, next) => {
 
     const result = await createNewAdmin(req.body);
 
+    //3. Unique url endpoint and sent that to customer
+
     res.json({
-      message: "todo",
+      status: "success",
+      message:
+        "We have sent you an email check your inbox and verify your email address",
     });
   } catch (error) {
     if (error.message.includes("E11000 duplicate key error collection")) {

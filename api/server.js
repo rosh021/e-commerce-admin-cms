@@ -22,9 +22,9 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello From the server" });
 });
 
-app.use((error, req, res) => {
-  res.send = error.status || 400;
-  req.json({
+app.use((error, req, res, next) => {
+  const status = error.status || 404;
+  res.status(status).json({
     status: "error",
     message: error.message,
   });
