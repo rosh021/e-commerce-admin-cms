@@ -16,21 +16,26 @@ route.post("/", adminRegisterValidation, async (req, res, next) => {
     // 1. encrypt password
 
     req.body.password = hashPassword(req.body.password);
+    const varificationCode = uuidv4();
+    req.body.varificationCode = varificationCode;
 
     //2. call model to run save query
 
     const result = await createNewAdmin(req.body);
 
     //3. Unique url endpoint and sent that to customer
-
-    const varificationCode = uuidv4()
-
-
+    if (result?._id) {
+      console.log(result);
+      return res.json({
+        status: "success",
+        message:
+          "We have sent you an email check your inbox and verify your email address",
+      });
+    }
 
     res.json({
-      status: "success",
-      message:
-        "We have sent you an email check your inbox and verify your email address",
+      status: "error",
+      message: "Unable to create user, Please try again later",
     });
   } catch (error) {
     if (error.message.includes("E11000 duplicate key error collection")) {

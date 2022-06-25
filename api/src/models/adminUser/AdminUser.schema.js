@@ -53,6 +53,11 @@ const AdminSchema = new mongoose.Schema(
       type: String,
       maxlength: 100,
     },
+
+    varificationCode: {
+      type: String,
+      maxlength: 50,
+    },
   },
   {
     timestamps: true,
