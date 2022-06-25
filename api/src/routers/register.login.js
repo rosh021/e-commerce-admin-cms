@@ -22,6 +22,8 @@ route.post("/", adminRegisterValidation, async (req, res, next) => {
 
     //3. Unique url endpoint and sent that to customer
 
+    
+
     res.json({
       status: "success",
       message:

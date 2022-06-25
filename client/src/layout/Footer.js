@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export const Footer = () => {
   return (
     <footer>
-        <div>
-            &copy; right all reserved ? Made my 😍
-        </div>
+      <div className="text-center bg-dark text-light py-5 mt-5  ">
+        &copy; right all reserved ? Made my 😍
+      </div>
     </footer>
-  )
-}
+  );
+};

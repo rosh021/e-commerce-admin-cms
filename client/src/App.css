@@ -1,0 +1,13 @@
+.main {
+  min-height: 100vh;
+}
+
+.reg-form form {
+  width: 400px;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border: 1px solid rgba(rgba(186, 186, 186, 0.5421));
+  box-shadow: -5px 5px 5px rgba(180, 180, 180, 180);
+  border-radius: 5px;
+
+}
