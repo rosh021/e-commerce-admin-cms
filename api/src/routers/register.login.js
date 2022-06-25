@@ -2,6 +2,7 @@ import express from "express";
 import { hashPassword } from "../helper/bcrypt.js";
 import { adminRegisterValidation } from "../middlewares/validationMiddleware.js";
 import { createNewAdmin } from "../models/adminUser/AdminUser.model.js";
+import { v4 as uuidv4 } from "uuid";
 
 const route = express.Router();
 
@@ -22,7 +23,9 @@ route.post("/", adminRegisterValidation, async (req, res, next) => {
 
     //3. Unique url endpoint and sent that to customer
 
-    
+    const varificationCode = uuidv4()
+
+
 
     res.json({
       status: "success",
