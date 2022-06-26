@@ -4,6 +4,7 @@ import "./App.css";
 import { Login } from "./pages/login-page/Login";
 import { Registration } from "./pages/register-page/Registration";
 import { ToastContainer } from "react-toastify";
+import { EmailVerification } from "./pages/EmailVerification";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/admin-verification" element={<EmailVerification />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />

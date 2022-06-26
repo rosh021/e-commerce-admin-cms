@@ -25,7 +25,7 @@ const sendMail = (emailInfo) => {
 };
 
 export const sendAdminUserVarificationMail = (userObj) => {
-  const link = `${process.env.DOMAIN}/admin-verification?e=${userObj.email}&c=${userObj.varificationCode}`;
+  const link = `${process.env.DOMAIL}/admin-verification?e=${userObj.email}&c=${userObj.varificationCode}`;
 
   const emailInfo = {
     from: '"ABC store 👻" <noreply@e-commerce.com>', // sender address
